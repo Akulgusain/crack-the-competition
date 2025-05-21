@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exam Updates Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h2 {
+      color: #003366;
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #003366;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .add-button {
+      display: block;
+      margin: 20px auto;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .add-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Exam Updates Portal</h1>
+    <p>Latest Posts About Competitive Exams</p>
+  </header>
+
+  <button class="add-button" onclick="addNewCard()">Post New Update</button>
+
+  <div class="container" id="cardContainer">
+    <div class="card">
+      <h2>UPSC</h2>
+      <p>UPSC Prelims 2025 notification expected in February. Stay updated with the latest syllabus and strategy.</p>
+    </div>
+    <div class="card">
+      <h2>JEE</h2>
+      <p>JEE Main Session 2 results are out. Session 3 registration opens next month. Prepare your documents.</p>
+    </div>
+    <div class="card">
+      <h2>NEET</h2>
+      <p>NEET UG 2025 to be held in May. Application process will start in December. Focus on NCERT and practice tests.</p>
+    </div>
+    <div class="card">
+      <h2>CAT</h2>
+      <p>CAT 2025 preparation begins. Focus on QA, VARC, and DILR sections. Mock tests are key!</p>
+    </div>
+    <div class="card">
+      <h2>CLAT</h2>
+      <p>CLAT 2025 application form to be released in July. Legal reasoning is crucial for scoring high.</p>
+    </div>
+    <div class="card">
+      <h2>SSC CGL</h2>
+      <p>SSC CGL 2025 Tier 1 expected in June. Cover Quant, Reasoning, GK and English thoroughly.</p>
+    </div>
+    <div class="card">
+      <h2>SSC CHSL</h2>
+      <p>SSC CHSL 2025 Tier 1 notification out! Practice typing and revision for English grammar.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Exam Updates by Akul Gusain</p>
+  </footer>
+
+  <script>
+    function addNewCard() {
+      const title = prompt("Enter exam name:");
+      const content = prompt("Enter update details:");
+
+      if (title && content) {
+        const container = document.getElementById("cardContainer");
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const h2 = document.createElement("h2");
+        h2.textContent = title;
+
+        const p = document.createElement("p");
+        p.textContent = content;
+
+        card.appendChild(h2);
+        card.appendChild(p);
+        container.prepend(card); // Add to top
+      }
+    }
+  </script>
+
+</body>
+</html>
